@@ -1,0 +1,8 @@
+README.md
+setup.py
+xdc.py
+xdc.egg-info/PKG-INFO
+xdc.egg-info/SOURCES.txt
+xdc.egg-info/dependency_links.txt
+xdc.egg-info/requires.txt
+xdc.egg-info/top_level.txt
