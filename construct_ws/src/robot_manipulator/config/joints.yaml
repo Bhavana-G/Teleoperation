@@ -1,0 +1,23 @@
+#joint state controllers will publish the joint states of the arm
+# Publish all joint states
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+#joint position controllers can receive a goal position for each joint and move each joint
+# Position Controllers
+joint1_position_controller:
+  #we are sending the effort of the joint but want to control the position of the joint
+  #type: effort_controllers/JointPositionController
+  type: position_controllers/JointPositionController
+  joint: base_link1
+  pid: {p: 700, i: 50, d: 70} #used to see the robot moving
+#PID proportional, integral and derivative contributions to /control_effort
+#idea of dynamic reconfigure for p, i and d is that you get your robot actuator to repeatedly perform a movement
+joint2_position_controller:
+  type: position_controllers/JointPositionController
+  joint: link1_link2
+  pid: {p: 700, i: 50, d: 70}
+
+#Publish to rostopic for testing
+#rostopic pub -1 /mrm/joint2_position_controller/command std_msgs/Float64 "data: 0.7"

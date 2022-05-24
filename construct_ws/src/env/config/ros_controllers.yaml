@@ -1,0 +1,12 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+#talking with the trajectory controllers in Gazebo from MoveIt
+controller_list:
+  - name: /arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - base_dummy
+      - dummy_link

@@ -1,0 +1,13 @@
+controller_list:
+  - name: fake_fixed_controller
+    type: $(arg fake_execution_type)
+    joints:
+      []
+  - name: fake_arm_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - base_dummy
+      - dummy_link
+initial:  # Define initial robot poses per group
+  - group: arm
+    pose: home

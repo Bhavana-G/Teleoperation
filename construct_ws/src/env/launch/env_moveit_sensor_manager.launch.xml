@@ -1,0 +1,9 @@
+<launch>
+    
+    <param name="moveit_controller_manager" 
+        value="moveit_simple_controller_manager/MoveItSimpleControllerManager" />
+
+    <!-- loads ros_controllers to the param server -->
+    <rosparam file="$(find env)/config/ros_controllers.yaml"/>
+
+</launch>

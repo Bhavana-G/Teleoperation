@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: mastering_ros_robot_description_pkg
+    relative_path: urdf/seven_dof_arm.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/seven_dof_arm.srdf
+  CONFIG:
+    author_name: PES1PG20CS009
+    author_email: pes1pg20cs009@pesuonline.onmicrosoft.com
+    generated_timestamp: 1644659118

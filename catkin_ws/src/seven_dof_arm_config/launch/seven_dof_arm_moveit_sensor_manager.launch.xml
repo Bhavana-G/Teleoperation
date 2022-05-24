@@ -1,0 +1,7 @@
+<!-- <launch>
+
+</launch>
+Created by moveit. This is only seven_dof_arm_moveit_sensor_manager.launch refered in Textbook-->
+<launch>
+  <rosparam command="load" file="$(find seven_dof_arm_config)/config/sensors_3d.yaml" /> 
+</launch>

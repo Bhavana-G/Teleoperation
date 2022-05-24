@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<launch>
+
+        <!-- startup simulated world -->
+        <include file="$(find gazebo_ros)/launch/empty_world.launch">
+            <arg name="world_name" default="worlds/empty.world"/>
+            <arg name="paused" value="false"/>
+            <arg name="gui" value="true"/>
+        </include>
+
+        <!-- Robot model -->
+        <param name="robot_description" command="$(find xacro)/xacro --inorder $(find robot_manipulator)/urdf/model/env.xacro"/>
+        
+        <!-- Spawn the robot model -->
+        <node name="env_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+            args="-urdf -param robot_description -model env" />
+        
+        <!-- Load controllers (load command comes under ros_control dependency added in cmake) -->
+        <rosparam command="load" file="$(find robot_manipulator)/config/env.yaml"/>
+        
+        <!-- Controllers -->
+        <node name="controller_spawner" pkg="controller_manager" type="spawner"  
+            output="screen" respawn="false"
+            args="joint_state_controller
+            --timeout 60"> 
+        </node>
+        
+<!-- Publish to rostopic for testing
+rostopic pub -1 /joint4_position_controller/command std_msgs/Float64 "data: 0.7" -->
+</launch>

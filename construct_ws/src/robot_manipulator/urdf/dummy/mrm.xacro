@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+
+<robot name="mrm" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+<xacro:include filename="$(find robot_manipulator)/urdf/dummy/links_joints.xacro"/>
+<!-- <xacro:include filename="$(find robot_manipulator)/urdf/dummy/robot_parameters.xacro"/> -->
+
+    <xacro:m_link_box name="base" origin_xyz="0 0 0" origin_rpy="0 0 0" 
+        size="1 1 1" mass="1024"
+        ixx="170.667" ixy="0" ixz="0"
+        iyy="170.667" iyz="0"
+        izz="170.667" />
+
+    <xacro:m_joint name="base_link1" type="revolute" parent="base" child="link1"
+        origin_rpy="0 0 0" origin_xyz="0 0 0.5" axis_xyz="0 0 1"
+        limit_e="1000" limit_l="-3.14" limit_u="3.14" limit_v="0.5" />
+
+    <!-- transmission tag is used to add Gazebo controllers
+    Added to each joint to links joints with actuators -->
+    <transmission name="trans_base_link1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="base_link1">
+            <!-- used to define the controller interface to load the position, velocity, or effort interfaces
+                We can see that controllers send position of the join but 
+                In background Controllers send effort to the joints -->
+            <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor_base_link1">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <xacro:m_link_cylinder name="link1" origin_rpy="0 0 0" origin_xyz="0 0 0.2" 
+        radius="0.35" length="0.4" mass="157.633"
+        ixx="13.235" ixy="0" ixz="0"
+        iyy="13.235" iyz="0"
+        izz="9.655" />
+
+    <xacro:m_joint name="link1_link2" type="revolute" parent="link1" child="link2"
+        origin_rpy="0 0 0" origin_xyz="0 0 0.4" axis_xyz="0 1 0"
+        limit_e="1000" limit_l="-3.14" limit_u="3.14" limit_v="0.5" />
+    
+    <transmission name="trans_link1_link2">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="link1_link2">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor_link1_link2">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <xacro:m_link_cylinder name="link2" origin_rpy="0 0 0" origin_xyz="0 0 0.4" 
+        radius="0.15" length="0.8" mass="57.906"
+        ixx="12.679" ixy="0" ixz="0"
+        iyy="12.679" iyz="0"
+        izz="0.651" />
+
+    <!-- Add gazebo plugin at end of the file as we are adding gazebo controllers -->
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so" />
+    </gazebo>
+
+</robot>

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+
+<robot name="six_links" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+<xacro:include filename="$(find robot_manipulator)/urdf/trial/macro.xacro"/>
+<xacro:include filename="$(find robot_manipulator)/urdf/trial/properties.xacro"/>
+
+    <xacro:m_link_box name="base" origin_xyz="0 0 0" origin_rpy="0 0 0" size="1 1 1" />
+    <!-- <link name="base">
+        <visual>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="1.0 1.0 1.0"/>
+            </geometry>
+        </visual>
+    </link> -->
+
+    <xacro:m_joint name="base_${l01}" type="revolute" parent="base" child="link1"
+        origin_rpy="0 0 0" origin_xyz="0 0 0.5" axis_xyz="0 0 1"
+        limit_e="1000" limit_l="-3.14" limit_u="3.14" limit_v="0.5" />
+    <!-- <joint name="base_link1" type="revolute">
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.5"/>
+        <parent link="base"/>
+        <child link="link1"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <!- 3.14 is pi=180 degrees ->
+        <limit lower="-3.14" upper="3.14" effort="1000.0" velocity="0.5"/>
+    </joint> -->
+
+    <xacro:m_link_cylinder name="${l01}" origin_rpy="0 0 0" origin_xyz="0 0 0.2" 
+        radius="0.35" length="0.4" />
+    <!-- <link name="link1">
+        <visual>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.2"/>
+            <geometry>
+                <cylinder radius="0.35" length="0.4"/>
+            </geometry>
+        </visual>
+    </link> -->
+
+    <xacro:m_joint name="link1_link2" type="revolute" parent="link1" child="link2"
+        origin_rpy="0 0 0" origin_xyz="0 0 0.4" axis_xyz="0 1 0"
+        limit_e="1000" limit_l="-3.14" limit_u="3.14" limit_v="0.5" />
+    <!-- <joint name="link1_link2" type="revolute">
+        <origin xyz="0.0 0.0 0.4" rpy="0.0 0.0 0.0"/>
+        <parent link="link1"/>
+        <child link="link2"/>
+        <axis xyz="0.0 1.0 0.0"/>
+        <limit lower="-3.14" upper="3.14" effort="1000.0" velocity="0.5"/>
+    </joint> -->
+
+    <xacro:m_link_cylinder name="link2" origin_rpy="0 0 0" origin_xyz="0 0 0.4" 
+        radius="0.15" length="0.8" />
+    <!-- <link name="link2">
+        <visual>
+            <origin xyz="0.0 0.0 0.4" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.15" length="0.8"/>
+            </geometry>
+        </visual>
+    </link> -->
+
+</robot>

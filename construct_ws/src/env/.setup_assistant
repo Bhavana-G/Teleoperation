@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: robot_manipulator
+    relative_path: urdf/model/env.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/env.srdf
+  CONFIG:
+    author_name: Bhavana
+    author_email: pes1pg20cs009@pesuonline.onmicrosoft.com
+    generated_timestamp: 1646304626
