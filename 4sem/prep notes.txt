@@ -1,0 +1,4 @@
+magnitude of vector from gyroscope is angle
+normalization vector from gyroscope is axis
+drift can be corrected by accelerometer(gravity) and magnetometer(compass)
+

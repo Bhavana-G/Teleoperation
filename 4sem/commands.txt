@@ -1,0 +1,4 @@
+• catkin_create_pkg: This command is used to create a new package.
+• rospack: This command is used to get information about the package in the filesystem.
+• catkin_make: This command is used to build the packages in the workspace.
+• rosdep: This command will install the system dependencies required for this package.
