@@ -1,0 +1,143 @@
+ubuntu@ubuntu:~/xsens_dot_server$ sudo node xsensDotServer
+Web GUI Handler instantiated
+BLE Handler started.
+Webserver listening on port 8080, IP address: 10.20.204.4
+blePoweredOn: true
+Add global connected sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 read heading status 0800
+startSyncing isInSyncingProgress false
+startSyncing root d4:22:cd:00:30:92, devices {"id":"d422cd003092","address":"d4:22:cd:00:30:92","addressType":"public","connectable":true,"advertisement":{"localName":"Xsens DOT","manufacturerData":{"type":"Buffer","data":[134,8,146,48,0,205,34,212]},"serviceData":[],"serviceUuids":[],"solicitationServiceUuids":[],"serviceSolicitationUuids":[]},"rssi":-72,"state":"connected"}
+sum 655, checkSum 113
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_CONTROL write null
+disconnect sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 Syncing eventName bleSensorDisconnected
+Remove global connected sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 Syncing eventName bleSensorConnected
+======= isInSyncingProgress: true
+Add global connected sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 read heading status 0800
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_ACK read 0206030000000000f500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_ACK read true
+d4:22:cd:00:30:92 Syncing eventName bleSensorSyncingDone
+d4:22:cd:00:30:92 isSuccess true
+d4:22:cd:00:30:92 syncing done list: [object Object]
+onSyncingDone 1, 1, 1
+ERROR: component 'SensorServer' received unexpected event 'bleSensorData' in state 'Idle'
+ERROR: component 'SensorServer' received unexpected event 'bleSensorData' in state 'Idle'
+ERROR: component 'SensorServer' received unexpected event 'bleSensorData' in state 'Idle'
+startSyncing isInSyncingProgress false
+startSyncing root d4:22:cd:00:30:92, devices {"id":"d422cd003092","address":"d4:22:cd:00:30:92","addressType":"public","connectable":true,"advertisement":{"localName":"Xsens DOT","manufacturerData":{"type":"Buffer","data":[134,8,146,48,0,205,34,212]},"serviceData":[],"serviceUuids":[],"solicitationServiceUuids":[],"serviceSolicitationUuids":[]},"rssi":-72,"state":"connected"}
+sum 655, checkSum 113
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_CONTROL write null
+disconnect sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 Syncing eventName bleSensorDisconnected
+Remove global connected sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 Syncing eventName bleSensorConnected
+======= isInSyncingProgress: true
+Add global connected sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 read heading status 0800
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_ACK read 0206030000000000f500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_ACK read true
+d4:22:cd:00:30:92 Syncing eventName bleSensorSyncingDone
+d4:22:cd:00:30:92 isSuccess true
+d4:22:cd:00:30:92 syncing done list: [object Object]
+onSyncingDone 1, 1, 1
+ERROR: component 'SensorServer' received unexpected event 'bleSensorData' in state 'Idle'
+ERROR: component 'SensorServer' received unexpected event 'bleSensorData' in state 'Idle'
+startSyncing isInSyncingProgress false
+startSyncing root d4:22:cd:00:30:92, devices {"id":"d422cd003092","address":"d4:22:cd:00:30:92","addressType":"public","connectable":true,"advertisement":{"localName":"Xsens DOT","manufacturerData":{"type":"Buffer","data":[134,8,146,48,0,205,34,212]},"serviceData":[],"serviceUuids":[],"solicitationServiceUuids":[],"serviceSolicitationUuids":[]},"rssi":-72,"state":"connected"}
+sum 655, checkSum 113
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_CONTROL write null
+disconnect sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 Syncing eventName bleSensorDisconnected
+Remove global connected sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 Syncing eventName bleSensorConnected
+======= isInSyncingProgress: true
+Add global connected sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 read heading status 0800
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_ACK read 0206030000000000f500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_ACK read true
+d4:22:cd:00:30:92 Syncing eventName bleSensorSyncingDone
+d4:22:cd:00:30:92 isSuccess true
+d4:22:cd:00:30:92 syncing done list: [object Object]
+onSyncingDone 1, 1, 1
+ERROR: component 'SensorServer' received unexpected event 'bleSensorData' in state 'Idle'
+ERROR: component 'SensorServer' received unexpected event 'bleSensorData' in state 'Idle'
+startSyncing isInSyncingProgress false
+startSyncing root d4:22:cd:00:30:92, devices {"id":"d422cd003092","address":"d4:22:cd:00:30:92","addressType":"public","connectable":true,"advertisement":{"localName":"Xsens DOT","manufacturerData":{"type":"Buffer","data":[134,8,146,48,0,205,34,212]},"serviceData":[],"serviceUuids":[],"solicitationServiceUuids":[],"serviceSolicitationUuids":[]},"rssi":-72,"state":"connected"}
+sum 655, checkSum 113
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_CONTROL write null
+disconnect sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 Syncing eventName bleSensorDisconnected
+Remove global connected sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 Syncing eventName bleSensorConnected
+======= isInSyncingProgress: true
+Add global connected sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 read heading status 0800
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_ACK read 0206030000000000f500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_ACK read true
+d4:22:cd:00:30:92 Syncing eventName bleSensorSyncingDone
+d4:22:cd:00:30:92 isSuccess true
+d4:22:cd:00:30:92 syncing done list: [object Object]
+onSyncingDone 1, 1, 1
+ERROR: component 'SensorServer' received unexpected event 'bleSensorData' in state 'Idle'
+startSyncing isInSyncingProgress false
+startSyncing root d4:22:cd:00:30:92, devices {"id":"d422cd003092","address":"d4:22:cd:00:30:92","addressType":"public","connectable":true,"advertisement":{"localName":"Xsens DOT","manufacturerData":{"type":"Buffer","data":[134,8,146,48,0,205,34,212]},"serviceData":[],"serviceUuids":[],"solicitationServiceUuids":[],"serviceSolicitationUuids":[]},"rssi":-72,"state":"connected"}
+sum 655, checkSum 113
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_CONTROL write null
+disconnect sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 Syncing eventName bleSensorDisconnected
+Remove global connected sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 Syncing eventName bleSensorConnected
+======= isInSyncingProgress: true
+Add global connected sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 read heading status 0800
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_ACK read 0206030000000000f500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_ACK read true
+d4:22:cd:00:30:92 Syncing eventName bleSensorSyncingDone
+d4:22:cd:00:30:92 isSuccess true
+d4:22:cd:00:30:92 syncing done list: [object Object]
+onSyncingDone 1, 1, 1
+ERROR: component 'SensorServer' received unexpected event 'bleSensorData' in state 'Idle'
+ERROR: component 'SensorServer' received unexpected event 'bleSensorData' in state 'Idle'
+startSyncing isInSyncingProgress false
+startSyncing root d4:22:cd:00:30:92, devices {"id":"d422cd003092","address":"d4:22:cd:00:30:92","addressType":"public","connectable":true,"advertisement":{"localName":"Xsens DOT","manufacturerData":{"type":"Buffer","data":[134,8,146,48,0,205,34,212]},"serviceData":[],"serviceUuids":[],"solicitationServiceUuids":[],"serviceSolicitationUuids":[]},"rssi":-72,"state":"connected"}
+sum 655, checkSum 113
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_CONTROL write null
+disconnect sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 Syncing eventName bleSensorDisconnected
+Remove global connected sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 Syncing eventName bleSensorConnected
+======= isInSyncingProgress: true
+Add global connected sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 read heading status 0800
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_ACK read 0206030000000000f500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_ACK read true
+d4:22:cd:00:30:92 Syncing eventName bleSensorSyncingDone
+d4:22:cd:00:30:92 isSuccess true
+d4:22:cd:00:30:92 syncing done list: [object Object]
+onSyncingDone 1, 1, 1
+ERROR: component 'SensorServer' received unexpected event 'bleSensorData' in state 'Idle'
+ERROR: component 'SensorServer' received unexpected event 'bleSensorData' in state 'Idle'
+startSyncing isInSyncingProgress false
+startSyncing root d4:22:cd:00:30:92, devices {"id":"d422cd003092","address":"d4:22:cd:00:30:92","addressType":"public","connectable":true,"advertisement":{"localName":"Xsens DOT","manufacturerData":{"type":"Buffer","data":[134,8,146,48,0,205,34,212]},"serviceData":[],"serviceUuids":[],"solicitationServiceUuids":[],"serviceSolicitationUuids":[]},"rssi":-72,"state":"connected"}
+sum 655, checkSum 113
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_CONTROL write null
+disconnect sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 Syncing eventName bleSensorDisconnected
+Remove global connected sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 Syncing eventName bleSensorConnected
+======= isInSyncingProgress: true
+Add global connected sensor d4:22:cd:00:30:92
+d4:22:cd:00:30:92 read heading status 0800
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_ACK read 0206030000000000f500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+d4:22:cd:00:30:92 BLE_UUID_RECORDING_ACK read true
+d4:22:cd:00:30:92 Syncing eventName bleSensorSyncingDone
+d4:22:cd:00:30:92 isSuccess true
+d4:22:cd:00:30:92 syncing done list: [object Object]
+onSyncingDone 1, 1, 1
+ERROR: component 'SensorServer' received unexpected event 'bleSensorData' in state 'Idle'
+ERROR: component 'SensorServer' received unexpected event 'bleSensorData' in state 'Idle'
+ERROR: component 'SensorServer' received unexpected event 'bleSensorData' in state 'Idle'
+ERROR: component 'SensorServer' received unexpected event 'bleSensorData' in state 'Idle'
+
