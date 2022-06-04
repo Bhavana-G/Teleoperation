@@ -182,6 +182,8 @@ catkin_install_python(PROGRAMS
   scripts/input_joints.py
   scripts/simulated_imu.py
   scripts/imu_subscriber.py
+  scripts/euler_subscriber.py
+  scripts/simulated_euler.py 
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

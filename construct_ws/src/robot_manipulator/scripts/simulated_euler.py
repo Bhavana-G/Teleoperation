@@ -23,29 +23,22 @@ def initializeROS():
                                                 moveit_msgs.msg.DisplayTrajectory,
                                                 queue_size=20)
 
-def quaternion_to_euler(w, x, y, z):
-    q = [x, y, z, w]
-    rot = Rotation.from_quat(q)
-    try:
-        ang = rot.as_euler('zyx', degrees=True) #zyx yzx yxz returns-> z, y, x
-        print(ang)
-        X = round(ang[2], 3)
-        Y = round(ang[1], 3)
-    except:
-        print('Gimbal lock caught during euler representation')
-        warnings.filterwarnings("ignore")
-        ang = rot.as_euler('zyx', degrees=True)
-        X = round(ang[0], 3)
-        Y = round(ang[1], 3)
-    return X, Y
-
 def setJointGoal(x, y):
     global group
     joint_goal = group.get_current_joint_values()
-    # print("Joints" , joint_goal)
     joint_goal[0] = math.radians(y) # base_dummy
-    joint_goal[1] = math.radians(x) # dummy_link (-x is for mapping angle received from IMU sensor to rviz)
+    joint_goal[1] = math.radians(x) # dummy_link
     group.go(joint_goal, wait=True)
+
+def imu_to_rviz(x, y, z):
+    # X of ROS is y of IMU
+    y = y * -1
+    X = y - 90
+
+    # Y of ROS is z of IMU
+    Y = z + 90
+
+    return X, Y
 
 if __name__ == '__main__':
     global group 
@@ -53,15 +46,18 @@ if __name__ == '__main__':
     initializeROS()
     
     # Reading IMU data from excel
-    orig_df = pd.read_csv('/home/student/construct_ws/src/robot_manipulator/data/euler.csv', skiprows=5)
+    orig_df = pd.read_csv('/home/student/construct_ws/src/robot_manipulator/data/D422CD003092_20220604_180330_451.csv', skiprows=10) # 5 for server 10 for phone
     print(orig_df)
-    df = orig_df[['Quaternion_w', 'Quaternion_x', 'Quaternion_y', 'Quaternion_z']]
+    df = orig_df[['Euler_X', 'Euler_Y', 'Euler_Z']] # Euler_x for server Euler_X for phone
     
-    for index, quat in df.iterrows():
-        x, y = quaternion_to_euler(quat['Quaternion_w'], quat['Quaternion_x'], quat['Quaternion_y'], quat['Quaternion_z'])
-        print(quat['Quaternion_w'], quat['Quaternion_x'], quat['Quaternion_y'], quat['Quaternion_z'])
+    for index, euler in df.iterrows():
+        print(euler)
+        x, y = imu_to_rviz(euler['Euler_X'], euler['Euler_Y'], euler['Euler_Z'])
         print('x: ' + str(x) + ', y: ' + str(y))
-        setJointGoal(x-90, y)
+        if(y >= -90 and y <= 90): # base_dummy -> -90 to 90
+            if(x >= -180 and x <= 0): # dummy_link -> -180 to 0
+                print('setting goal')
+                setJointGoal(x, y)
 
     # Stop the simulation
     group.stop()

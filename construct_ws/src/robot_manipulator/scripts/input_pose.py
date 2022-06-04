@@ -68,10 +68,10 @@ def quaternion_to_euler_angle_vectorized2(w, x, y, z):
 
     return X, Y, Z
 
-quat = [0,  # x
-        0.008726535498374,   # y
-        0,  # z
-        0.999961923064171]  # w
+quat = [-0.32,  # x
+        -0.568,   # y
+        -0.353,  # z
+        0.669]  # w
 print(quaternion_to_euler_angle_vectorized1(quat[0], quat[1], quat[2], quat[3]))
 warnings.filterwarnings("error")
 
@@ -86,7 +86,7 @@ print(rot_quat)
 
 # Convert the rotation to Euler angles given the axes of rotation
 try:
-    ang = rot.as_euler('zyx', degrees=True) #zyx yzx yxz returns-> z, y, x
+    ang = rot.as_euler('yxz', degrees=True) #zyx yzx yxz returns-> z, y, x
     print(ang)
     print('x: ' + str(round(ang[2], 3)))
     print('y: ' + str(round(ang[1], 3)))
