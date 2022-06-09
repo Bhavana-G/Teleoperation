@@ -1,3 +1,4 @@
+from hashlib import new
 import pandas as pd
 import moveit_commander
 import rospy
@@ -23,12 +24,15 @@ def initializeROS():
                                                 moveit_msgs.msg.DisplayTrajectory,
                                                 queue_size=20)
 
-def quaternion_to_euler(w, x, y, z):
+def quaternion_to_euler(w, x, y, z, dfi):
     q = [x, y, z, w]
     rot = Rotation.from_quat(q)
     try:
         ang = rot.as_euler('zyx', degrees=True) #zyx yzx yxz returns-> z, y, x
         print(ang)
+        dfi['Euler_x'] = ang[2]
+        dfi['Euler_y'] = ang[1]
+        dfi['Euler_z'] = ang[0]
         X = round(ang[2], 3)
         Y = round(ang[1], 3)
     except:
@@ -53,15 +57,22 @@ if __name__ == '__main__':
     initializeROS()
     
     # Reading IMU data from excel
-    orig_df = pd.read_csv('/home/student/construct_ws/src/robot_manipulator/data/euler.csv', skiprows=5)
+    orig_df = pd.read_csv('/home/student/construct_ws/src/robot_manipulator/data/new/home_quat.csv', skiprows=10)
     print(orig_df)
-    df = orig_df[['Quaternion_w', 'Quaternion_x', 'Quaternion_y', 'Quaternion_z']]
+    df = orig_df[['Quat_W', 'Quat_X', 'Quat_Y', 'Quat_Z']] #'Quaternion_w', 'Quaternion_x', 'Quaternion_y', 'Quaternion_z']]
     
+    quat_list = []
+
     for index, quat in df.iterrows():
-        x, y = quaternion_to_euler(quat['Quaternion_w'], quat['Quaternion_x'], quat['Quaternion_y'], quat['Quaternion_z'])
-        print(quat['Quaternion_w'], quat['Quaternion_x'], quat['Quaternion_y'], quat['Quaternion_z'])
+        x, y = quaternion_to_euler(quat['Quat_W'], quat['Quat_X'], quat['Quat_Y'], quat['Quat_Z'], quat)
+        print(quat['Quat_W'], quat['Quat_X'], quat['Quat_Y'], quat['Quat_Z'])
         print('x: ' + str(x) + ', y: ' + str(y))
+        quat_list.append(quat)
         setJointGoal(x-90, y)
+
+    new_df = pd.DataFrame(quat_list)
+    print(new_df)
+    new_df.to_csv('/home/student/construct_ws/src/robot_manipulator/data/new/home_quat_zyx.csv')
 
     # Stop the simulation
     group.stop()

@@ -46,7 +46,7 @@ if __name__ == '__main__':
     initializeROS()
     
     # Reading IMU data from excel
-    orig_df = pd.read_csv('/home/student/construct_ws/src/robot_manipulator/data/D422CD003092_20220604_180330_451.csv', skiprows=10) # 5 for server 10 for phone
+    orig_df = pd.read_csv('/home/student/construct_ws/src/robot_manipulator/data/new/home_euler.csv', skiprows=10) # 5 for server 10 for phone
     print(orig_df)
     df = orig_df[['Euler_X', 'Euler_Y', 'Euler_Z']] # Euler_x for server Euler_X for phone
     
