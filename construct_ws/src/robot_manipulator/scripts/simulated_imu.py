@@ -57,7 +57,7 @@ if __name__ == '__main__':
     initializeROS()
     
     # Reading IMU data from excel
-    orig_df = pd.read_csv('/home/student/construct_ws/src/robot_manipulator/data/new/home_quat.csv', skiprows=10)
+    orig_df = pd.read_csv('/home/student/construct_ws/src/robot_manipulator/data/new/up180_quat.csv', skiprows=10)
     print(orig_df)
     df = orig_df[['Quat_W', 'Quat_X', 'Quat_Y', 'Quat_Z']] #'Quaternion_w', 'Quaternion_x', 'Quaternion_y', 'Quaternion_z']]
     
@@ -72,7 +72,7 @@ if __name__ == '__main__':
 
     new_df = pd.DataFrame(quat_list)
     print(new_df)
-    new_df.to_csv('/home/student/construct_ws/src/robot_manipulator/data/new/home_quat_zyx.csv')
+    new_df.to_csv('/home/student/construct_ws/src/robot_manipulator/data/new/up180_quat_zyx.csv')
 
     # Stop the simulation
     group.stop()
